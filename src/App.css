@@ -1,38 +1,203 @@
-.App {
-  text-align: center;
+/* ! First Week of CSS */
+:root {
+  --background: #232323;
+  --lift: #2c2c2c;
+  --faded: #838383;
+  /* * Pick an accent color below by commenting in one set, and commenting the others out */
+  /* !Salmon */
+  /* --accent: 7, 82%;
+  --l: 63%; */
+
+/* !Blue */
+  /* --accent: 198, 76%;
+  --l: 51%; */
+
+/* !Orange */
+  /* --accent: 19, 97%;
+  --l: 51%; */
+
+/* !Pink */
+  /* --accent: 334, 100%;
+  --l: 50%; */
+
+/* !Purple */
+  /* --accent: 265, 83%;
+  --l: 57%; */
+
+/* !Green */
+  /* --accent: 162, 95%;
+  --l: 34%; */
+
+/* !Yellow */
+  --accent: 36, 100%;
+  --l: 56%;
+
+  --color-primary: hsl(var(--accent),var(--l))
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
   min-height: 100vh;
+  min-width: 100vw;
+  background-color: var(--background);
+  overflow-x: hidden;
+}
+
+header {
+  height: 75px;
+  width: 100vw;
+  background-color: var(--color-primary);
+  padding: 0px 35px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  box-sizing: border-box;
+}
+
+.App {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.task-form {
+  background: var(--lift);
+  width: 300px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  border-radius: 3px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.7);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input, select {
+  height: 45px;
+  width: 300px;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 3px;
+}
+
+button {
+  min-width: 150px;
+  height: 45px;
+  font-size: 25px;
+  border-radius: 3px;
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  margin: 10px;
+  transition: all 0.05s ease-in-out;
+}
+
+button:active {
+  background-color: var(--color-primary);
+  color: white;
+  transition: all 0.05s ease-in-out;
+}
+
+.nav-btn {  
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 20px;
+  border-radius: 3px;
+  border: none;
+  height: 45px;
+  min-width: 50px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-btn:hover {
+  --color-darken: hsl(var(--accent),calc(var(--l) - 10%));
+  background-color: var(--color-darken);
+}
+
+.nav-btn:active {
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+  transition: all 0.05s ease-in-out;
+}
+
+.task-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.small-btn {
+  min-width: 40px;
+  height: 40px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 45px
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.icon-button {
+  color: var(--color-primary);
+  font-size: 55px;
+}
+
+.circle-outline {
+  border: 4px solid var(--color-primary);
+  border-radius: 50%
+}
+
+.item-card {
+  display: flex;
+  padding: 15px;
+  box-sizing: border-box;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.7);
+  width: 100%;
+  height: fit-content;
+  background-color: var(--lift);
+  border-radius: 3px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.countdown-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* gap: 5px; */
+}
+
+.countdown-box h3 {
+  color: var(--background);
+  font-size: 100px;
+  margin: 0px;
+  padding-bottom: 10px;
+}
+
+.countdown-box div {
+  /* border: 4px solid var(--color-primary); */
+  /* border-radius: 50% 0 0 50%; */
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary);
+}
+
+.left {
+  border-radius: 50% 0 0 50%;
+}
+
+.right {
+  border-radius: 0 50% 50% 0;
 }
